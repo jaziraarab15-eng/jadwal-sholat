@@ -1,0 +1,66 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Arial,sans-serif;
+    background:#0f172a;
+    color:white;
+}
+
+.container{
+    max-width:420px;
+    margin:20px auto;
+    padding:20px;
+}
+
+h1,h2,h3{
+    text-align:center;
+}
+
+#kota{
+    margin-top:10px;
+    color:#38bdf8;
+}
+
+#tanggal{
+    margin-top:8px;
+    color:#cbd5e1;
+    font-size:16px;
+}
+
+.next-card{
+    margin-top:20px;
+    background:#16a34a;
+    padding:20px;
+    border-radius:16px;
+    text-align:center;
+    box-shadow:0 5px 15px rgba(0,0,0,.3);
+}
+
+#countdown{
+    margin-top:10px;
+    font-size:38px;
+    font-weight:bold;
+}
+
+.card{
+    margin-top:20px;
+    background:#1e293b;
+    border-radius:16px;
+    padding:20px;
+}
+
+.card p{
+    display:flex;
+    justify-content:space-between;
+    padding:16px 0;
+    border-bottom:1px solid #334155;
+    font-size:20px;
+}
+
+.card p:last-child{
+    border-bottom:none;
+}
