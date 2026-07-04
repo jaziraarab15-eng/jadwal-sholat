@@ -57,8 +57,12 @@ document.getElementById("tanggal").innerHTML =
     `${masehi}<br>${hijri.day} ${hijri.month.en} ${hijri.year} H`;
         startCountdown(t);
 
-    }, (err) => {
+        }, (err) => {
         alert("Gagal mendapatkan lokasi: " + err.message);
+    }, {
+        enableHighAccuracy: true,
+        timeout: 15000,
+        maximumAge: 0
     });
 }
 
