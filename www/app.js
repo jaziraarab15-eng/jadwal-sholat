@@ -1,4 +1,5 @@
 async function loadPrayerTimes() {
+    alert("loadPrayerTimes dipanggil");
     if (!navigator.geolocation) {
         alert("Browser tidak mendukung GPS.");
         return;
@@ -57,9 +58,9 @@ document.getElementById("tanggal").innerHTML =
     `${masehi}<br>${hijri.day} ${hijri.month.en} ${hijri.year} H`;
         startCountdown(t);
 
-        }, (err) => {
-        alert("Gagal mendapatkan lokasi: " + err.message);
-    }, {
+        (err) => {
+    alert("GPS Error: " + err.code + " - " + err.message);
+}, {
         enableHighAccuracy: true,
         timeout: 15000,
         maximumAge: 0
