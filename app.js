@@ -66,10 +66,9 @@ document.getElementById("tanggal").innerHTML =
     });
 }
 
-function startCountdown(t);
-schedulePrayerNotifications(t); {
+function startCountdown(t) {
 
-    function tick() {
+    // schedulePrayerNotifications(t);
 
         const now = new Date();
 
@@ -131,7 +130,7 @@ schedulePrayerNotifications(t); {
     setInterval(tick, 1000);
 }
 
-initNotifications();
+// initNotifications();
 loadPrayerTimes();
 
 async function getQiblaDirection() {
