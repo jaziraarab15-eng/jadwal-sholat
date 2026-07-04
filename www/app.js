@@ -66,7 +66,8 @@ document.getElementById("tanggal").innerHTML =
     });
 }
 
-function startCountdown(t) {
+function startCountdown(t);
+schedulePrayerNotifications(t); {
 
     function tick() {
 
