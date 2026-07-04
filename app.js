@@ -130,4 +130,38 @@ function startCountdown(t) {
     setInterval(tick, 1000);
 }
 
+initNotifications();
 loadPrayerTimes();
+
+async function getQiblaDirection() {
+    if (!navigator.geolocation) {
+        alert("GPS tidak tersedia");
+        return;
+    }
+
+    navigator.geolocation.getCurrentPosition((pos) => {
+        const lat = pos.coords.latitude;
+        const lon = pos.coords.longitude;
+
+        const kaabaLat = 21.4225;
+        const kaabaLon = 39.8262;
+
+        const toRad = (deg) => deg * (Math.PI / 180);
+        const toDeg = (rad) => rad * (180 / Math.PI);
+
+        const dLon = toRad(kaabaLon - lon);
+
+        const y = Math.sin(dLon);
+        const x =
+            Math.cos(toRad(lat)) *
+            Math.tan(toRad(kaabaLat)) -
+            Math.sin(toRad(lat)) *
+            Math.cos(dLon);
+
+        let brng = toDeg(Math.atan2(y, x));
+        brng = (brng + 360) % 360;
+
+        document.getElementById("qibla").innerText =
+            "🧭 Arah Kiblat: " + brng.toFixed(2) + "° dari utara";
+    });
+}
