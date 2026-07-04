@@ -58,7 +58,7 @@ document.getElementById("tanggal").innerHTML =
     `${masehi}<br>${hijri.day} ${hijri.month.en} ${hijri.year} H`;
         startCountdown(t);
 
-        (err) => {
+    }, (err) => {
     alert("GPS Error: " + err.code + " - " + err.message);
 }, {
         enableHighAccuracy: true,
