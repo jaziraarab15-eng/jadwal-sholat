@@ -169,3 +169,25 @@ async function getQiblaDirection() {
 
 initNotifications();
 loadPrayerTimes();
+
+async function loadPrayerTimes() {
+    alert("1. App dimulai");
+
+    if (!navigator.geolocation) {
+        alert("2. Geolocation tidak tersedia");
+        return;
+    }
+
+    alert("3. Meminta GPS");
+
+    navigator.geolocation.getCurrentPosition(async (pos) => {
+        alert("4. GPS berhasil");
+        ...
+    }, (err) => {
+        alert("GPS Error: " + err.code + " - " + err.message);
+    }, {
+        enableHighAccuracy: true,
+        timeout: 15000,
+        maximumAge: 0
+    });
+}
